@@ -38,7 +38,10 @@ import com.amazonaws.services.ec2.model.DescribeAvailabilityZonesResult;
 import com.amazonaws.services.ec2.model.DescribeInstancesResult;
 import com.amazonaws.services.ec2.model.Instance;
 import com.amazonaws.services.ec2.model.Reservation;
+import com.amazonaws.services.ec2.model.RunInstancesRequest;
+import com.amazonaws.services.ec2.model.RunInstancesResult;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -59,8 +62,32 @@ import java.util.Set;
  */
 public class C3_UI extends javax.swing.JFrame {
 
+    /**
+     * Starts a new instance
+     */
+    private static RunInstancesResult startNewAmazonInstance(AmazonEC2 ec2, String ami_id) {
+        RunInstancesRequest request = new RunInstancesRequest(ami_id,1,1); // launch 1 instance
+        //request.setKeyName("key4");
+        request.setInstanceType("m1.large");
+        return ec2.runInstances(request);
+    }
+
+    /** Takes instance result info and returns instances from it as a set
+     * 
+     * @param instanceResult set of running instances
+     * @return
+     */
+    private static Set<Instance> getInstancesFromResult(RunInstancesResult instanceResult) {
+        Reservation reservationNewInstance = instanceResult.getReservation();
+        Set<Instance> newInstances = new HashSet<Instance>();
+        newInstances.addAll(reservationNewInstance.getInstances()); // only 1 in this case
+        return newInstances;
+    }
+
     /** Creates new form C3_UI */
     public C3_UI() {
+        System.out.println("-------------------");
+        System.out.println("Testing Amazon");
         try {
             testAmazon();
         }
@@ -71,12 +98,11 @@ public class C3_UI extends javax.swing.JFrame {
             System.out.println("Exception "+e.getClass().toString()+": " + e.getMessage());
         }
         System.out.println("Done testing Amazon");
-        
-        
+        System.out.println("-------------------");
         System.out.println("Setting up OWL ontology & Reasoner");
         setupOWL();
         System.out.println("Done setting up OWL ontology & Reasoner");
-
+        System.out.println("-------------------");
         System.out.println("Starting up GUI...");
         initComponents();
     }
@@ -1241,19 +1267,64 @@ public class C3_UI extends javax.swing.JFrame {
          * availability zones, and all instances sorted by reservation id.
          */
         try {
+            /*
             DescribeAvailabilityZonesResult availabilityZonesResult = ec2.describeAvailabilityZones();
             System.out.println("You have access to " + availabilityZonesResult.getAvailabilityZones().size() +
                     " Availability Zones.");
 
             DescribeInstancesResult describeInstancesRequest = ec2.describeInstances();
+
             List<Reservation> reservations = describeInstancesRequest.getReservations();
             Set<Instance> instances = new HashSet<Instance>();
 
             for (Reservation reservation : reservations) {
                 instances.addAll(reservation.getInstances());
             }
-
             System.out.println("You have " + instances.size() + " Amazon EC2 instance(s) running.");
+            */
+
+
+            Set<Instance> newInstances;
+            // Create a new instance and get the Instance ID of it.
+            //RunInstancesResult instanceResult = startNewAmazonInstance(ec2, "ami-52e2093b");
+            // newInstances = getInstancesFromResult(instanceResult);
+            //System.out.println("New instance created!");
+
+            // Since we don't want to create a new instance all the time, lets use the one already existing
+            DescribeInstancesResult describeInstancesRequest = ec2.describeInstances();
+
+            List<Reservation> reservations = describeInstancesRequest.getReservations();
+            newInstances = new HashSet<Instance>();
+
+            for (Reservation reservation : reservations) {
+                newInstances.addAll(reservation.getInstances());
+            }
+
+            Iterator it = newInstances.iterator();
+            while (it.hasNext()) { // For every instance created
+                // Get element
+                Instance newinstance = (Instance)it.next();
+                System.out.println("------------------------------");
+                System.out.println("Instance ID: "+newinstance.getInstanceId().toString());
+                System.out.println("AMI ID used: "+newinstance.getImageId().toString());
+                System.out.println("State: "+newinstance.getState().toString());
+                int maxCheck = 10; // Only wait for instance to run 20 times (about 10*2 sec = 20 seconds)
+                if (newinstance.getState().getName().equalsIgnoreCase("pending")) {
+                    while (!newinstance.getState().getName().equalsIgnoreCase("running") && maxCheck > 0) {
+                        System.out.println("Waiting for Amazon instance to start running...");
+                        System.out.println("Current State of Instance "+newinstance.getImageId().toString()+": "+newinstance.getState().toString());
+                        Thread.sleep(2000); // 2000 millisec = 2 seconds
+                        maxCheck--;
+                    } // Delay until instance is running                    
+                } else if (newinstance.getState().getName().equalsIgnoreCase("running")) {
+                    System.out.println("Public IP Address: "+newinstance.getPublicIpAddress().toString());
+                    System.out.println("Public DNS Name: "+newinstance.getPublicDnsName().toString());
+                    System.out.println("Architecture: "+newinstance.getArchitecture());
+                }
+                System.out.println("------------------------------");
+            }
+
+
         } catch (AmazonServiceException ase) {
                 System.out.println("Caught Exception: " + ase.getMessage());
                 System.out.println("Reponse Status Code: " + ase.getStatusCode());
