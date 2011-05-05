@@ -1,4 +1,3 @@
-
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -1360,9 +1359,8 @@ public class C3_UI extends javax.swing.JFrame {
     final JFileChooser fc = new JFileChooser();
     /* IRI prefix for ontology used */
     public static final String prefix = "http://www.c3.com/ontologies/c3InputSpecs#";
-    //public static final String DocLoc = "D:/CollegeHW/CS Research";
-    public static final String fileInLoc = "CESM_test2"; //DocLoc+"/ontologies/CESM_test2_extended3.owl";
-    public static final String fileOutLoc = "CESM_test2_modified.owl";//DocLoc+"/ontologies/CESM_test2_modified.owl";
+    public static final String fileInLoc = "CESM_ontology.owl";
+    public static final String fileOutLoc = "CESM_ontology_modified.owl";
     public static OWLReasoner reasoner;
     public static OWLDataFactory fac;
     private static DefaultPrefixManager pm = new DefaultPrefixManager(prefix);

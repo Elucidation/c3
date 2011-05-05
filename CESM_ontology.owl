@@ -1,0 +1,1668 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY c3InputSpecs7 "http://www.c3.com/ontologies/c3InputSpecs#4" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY c3InputSpecs6 "http://www.c3.com/ontologies/c3InputSpecs#48" >
+    <!ENTITY c3InputSpecs8 "http://www.c3.com/ontologies/c3InputSpecs#10" >
+    <!ENTITY c3InputSpecs4 "http://www.c3.com/ontologies/c3InputSpecs#96" >
+    <!ENTITY c3InputSpecs3 "http://www.c3.com/ontologies/c3InputSpecs#64" >
+    <!ENTITY c3InputSpecs "http://www.c3.com/ontologies/c3InputSpecs#1.9" >
+    <!ENTITY c3InputSpecs2 "http://www.c3.com/ontologies/c3InputSpecs#0.9" >
+    <!ENTITY c3InputSpecs5 "http://www.c3.com/ontologies/c3InputSpecs#0.47" >
+]>
+
+
+<rdf:RDF xmlns="http://www.c3.com/ontologies/c3InputSpecs#"
+     xml:base="http://www.c3.com/ontologies/c3InputSpecs"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:c3InputSpecs="http://www.c3.com/ontologies/c3InputSpecs#1.9"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:c3InputSpecs7="http://www.c3.com/ontologies/c3InputSpecs#4"
+     xmlns:c3InputSpecs6="&c3InputSpecs7;8"
+     xmlns:c3InputSpecs8="http://www.c3.com/ontologies/c3InputSpecs#10"
+     xmlns:c3InputSpecs3="http://www.c3.com/ontologies/c3InputSpecs#64"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:c3InputSpecs2="http://www.c3.com/ontologies/c3InputSpecs#0.9"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:c3InputSpecs5="http://www.c3.com/ontologies/c3InputSpecs#0.47"
+     xmlns:c3InputSpecs4="http://www.c3.com/ontologies/c3InputSpecs#96">
+    <owl:Ontology rdf:about="http://www.c3.com/ontologies/c3InputSpecs"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&dc;identifier"/>
+    <owl:AnnotationProperty rdf:about="&rdfs;label"/>
+    <owl:AnnotationProperty rdf:about="&rdfs;comment"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#hasAtmosphere -->
+
+    <owl:ObjectProperty rdf:about="http://www.c3.com/ontologies/c3InputSpecs#hasAtmosphere">
+        <rdfs:range rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717656360858999"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#hasAtmosphereGrid -->
+
+    <owl:ObjectProperty rdf:about="http://www.c3.com/ontologies/c3InputSpecs#hasAtmosphereGrid">
+        <rdfs:subPropertyOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasGrid"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#hasAtmosphereGridType -->
+
+    <owl:ObjectProperty rdf:about="http://www.c3.com/ontologies/c3InputSpecs#hasAtmosphereGridType">
+        <rdfs:subPropertyOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasGridType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#hasComponent -->
+
+    <owl:ObjectProperty rdf:about="http://www.c3.com/ontologies/c3InputSpecs#hasComponent">
+        <rdfs:range rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717603650095517"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#hasComponentType -->
+
+    <owl:ObjectProperty rdf:about="http://www.c3.com/ontologies/c3InputSpecs#hasComponentType"/>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#hasDate -->
+
+    <owl:ObjectProperty rdf:about="http://www.c3.com/ontologies/c3InputSpecs#hasDate">
+        <rdfs:range rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#Date"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#hasExtra -->
+
+    <owl:ObjectProperty rdf:about="http://www.c3.com/ontologies/c3InputSpecs#hasExtra">
+        <rdfs:range rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#Extra"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#hasGrid -->
+
+    <owl:ObjectProperty rdf:about="http://www.c3.com/ontologies/c3InputSpecs#hasGrid">
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#hasGridType -->
+
+    <owl:ObjectProperty rdf:about="http://www.c3.com/ontologies/c3InputSpecs#hasGridType">
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#hasIceGrid -->
+
+    <owl:ObjectProperty rdf:about="http://www.c3.com/ontologies/c3InputSpecs#hasIceGrid">
+        <rdfs:subPropertyOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasGrid"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#hasLand -->
+
+    <owl:ObjectProperty rdf:about="http://www.c3.com/ontologies/c3InputSpecs#hasLand">
+        <rdfs:range rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717672272352954"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#hasLandGrid -->
+
+    <owl:ObjectProperty rdf:about="http://www.c3.com/ontologies/c3InputSpecs#hasLandGrid">
+        <rdfs:subPropertyOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasGrid"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#hasLandIce -->
+
+    <owl:ObjectProperty rdf:about="http://www.c3.com/ontologies/c3InputSpecs#hasLandIce">
+        <rdfs:range rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717679128759954"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#hasOcean -->
+
+    <owl:ObjectProperty rdf:about="http://www.c3.com/ontologies/c3InputSpecs#hasOcean">
+        <rdfs:range rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717675633067030"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#hasOceanGrid -->
+
+    <owl:ObjectProperty rdf:about="http://www.c3.com/ontologies/c3InputSpecs#hasOceanGrid">
+        <rdfs:subPropertyOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasGrid"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#hasOceanGridType -->
+
+    <owl:ObjectProperty rdf:about="http://www.c3.com/ontologies/c3InputSpecs#hasOceanGridType">
+        <rdfs:subPropertyOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasGridType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#hasSeaIce -->
+
+    <owl:ObjectProperty rdf:about="http://www.c3.com/ontologies/c3InputSpecs#hasSeaIce">
+        <rdfs:range rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717667304191430"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
+
+    <owl:ObjectProperty rdf:about="&owl;topObjectProperty"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#hasAtmosphereLatitude -->
+
+    <owl:DatatypeProperty rdf:about="http://www.c3.com/ontologies/c3InputSpecs#hasAtmosphereLatitude">
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#hasAtmosphereLongitude -->
+
+    <owl:DatatypeProperty rdf:about="http://www.c3.com/ontologies/c3InputSpecs#hasAtmosphereLongitude">
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topDataProperty -->
+
+    <owl:DatatypeProperty rdf:about="&owl;topDataProperty"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#1850 -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#1850">
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#Date"/>
+        <owl:disjointWith rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#2000"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#2000 -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#2000">
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#Date"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#A -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#A">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#datm"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#dice"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#dlnd"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#docn"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#sglc"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#datm"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#dice"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#dlnd"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#docn"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#sglc"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#CompSet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#A_GLC -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#A_GLC">
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#NamedCompSets"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#cism"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#datm"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#dice"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#dlnd"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#docn"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#docn"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#dice"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#dlnd"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#cism"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#datm"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#A_PRESENT_DAY -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#A_PRESENT_DAY">
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#NamedCompSets"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#datm"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#docn"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#sglc"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#dice"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#datm"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#dice"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#dlnd"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#docn"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#sglc"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#dlnd"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#B -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#B">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#cam"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#cice"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#clm"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#pop2"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#sglc"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#cam"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#cice"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#clm"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#pop2"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#sglc"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#CompSet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#B_1850 -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#B_1850">
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#NamedCompSets"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#cam"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#cice"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#clm"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#pop2"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#sglc"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#cice"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#sglc"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#pop2"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#clm"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#cam"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasDate"/>
+                <owl:allValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#1850"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>All active components, pre-industrial</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#B_2000 -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#B_2000">
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#NamedCompSets"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#cam"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#cice"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#clm"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#pop2"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#sglc"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#cam"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#cice"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#clm"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#sglc"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#pop2"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasDate"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#2000"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>All active components, present day</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#B_2000_CN -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#B_2000_CN">
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#NamedCompSets"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#cam"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#cice"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#sglc"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasDate"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#2000"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasExtra"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#CN"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#cam"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#cice"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#clm"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#pop2"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#sglc"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#pop2"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#clm"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>All active components, present day</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#C -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#C">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#datm"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#dice"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#dlnd"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#pop2"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#sglc"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#datm"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#dice"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#dlnd"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#pop2"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#sglc"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#CompSet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#CHEM -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#CHEM">
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#Extra"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#CN -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#CN">
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#Extra"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#CompSet -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#CompSet">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717656360858999"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717667304191430"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717672272352954"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717675633067030"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717679128759954"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#D -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#D">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#cice"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#datm"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#docn"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#sglc"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#slnd"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#cice"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#datm"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#docn"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#sglc"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#slnd"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#CompSet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#Date -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#Date"/>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#E -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#E">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#cam"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#cice"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#clm"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#docn"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#sglc"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#cam"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#cice"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#clm"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#docn"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#sglc"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#CompSet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#E_1850_CN -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#E_1850_CN">
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#NamedCompSets"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#clm"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasExtra"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#CN"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#cam"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#cice"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#clm"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#docn"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#sglc"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasDate"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#1850"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#cice"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#cam"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#docn"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#sglc"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#E_2000 -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#E_2000">
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#NamedCompSets"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasDate"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#2000"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#clm"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#sglc"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#cam"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#cice"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#clm"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#docn"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#sglc"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#docn"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#cice"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#cam"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#Extra -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#Extra"/>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#G -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#G">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#cice"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#datm"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#dlnd"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#pop2"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#sglc"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#cice"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#datm"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#dlnd"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#pop2"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#sglc"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#CompSet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#H -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#H">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#cice"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#datm"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#pop2"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#sglc"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#slnd"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#cice"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#datm"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#pop2"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#sglc"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#slnd"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#CompSet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#I_1850_CN -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#I_1850_CN">
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#NamedCompSets"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasDate"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#1850"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#clm"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#clm"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#datm"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#sglc"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#sice"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#socn"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasExtra"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#CN"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#datm"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#sice"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#socn"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#sglc"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#I_2000 -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#I_2000">
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#NamedCompSets"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#clm"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#sglc"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#clm"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#datm"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#sglc"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#sice"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#socn"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#sice"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#datm"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#socn"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasDate"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#2000"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#NamedCompSets -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#NamedCompSets">
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#CompSet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717603650095517 -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717603650095517">
+        <rdfs:label>Component</rdfs:label>
+        <rdfs:comment>x = dead
+s = stub
+d = data
+other ~ active
+
+Components are described at http://www.cesm.ucar.edu/models/ccsm4.0/ccsm_doc/x42.html#ccsm_grids</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717656360858999 -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717656360858999">
+        <rdfs:label>Atmosphere</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717603650095517"/>
+        <dc:identifier>atm</dc:identifier>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717667304191430 -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717667304191430">
+        <rdfs:label>Sea-Ice</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717603650095517"/>
+        <dc:identifier>ice</dc:identifier>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717672272352954 -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717672272352954">
+        <rdfs:label>Land</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717603650095517"/>
+        <dc:identifier>lnd</dc:identifier>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717675633067030 -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717675633067030">
+        <rdfs:label>Ocean</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717603650095517"/>
+        <dc:identifier>ocn</dc:identifier>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717679128759954 -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717679128759954">
+        <rdfs:label>Land-Ice</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717603650095517"/>
+        <dc:identifier>glc</dc:identifier>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#Partial1 -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#Partial1">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Class>
+                                <owl:complementOf>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                                        <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#cam"/>
+                                    </owl:Restriction>
+                                </owl:complementOf>
+                            </owl:Class>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasDate"/>
+                                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#2000"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#docn"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#CompSet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#Partial2 -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#Partial2">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#cam"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasDate"/>
+                        <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#2000"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#CompSet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#X_PRESENT_DAY -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#X_PRESENT_DAY">
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#NamedCompSets"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#xatm"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#xglc"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#xice"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#xlnd"/>
+                            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#xocn"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#xice"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#xocn"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#xglc"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#xatm"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#hasComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#xlnd"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#cam -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#cam">
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717656360858999"/>
+        <rdfs:comment>The Community Atmosphere Model (CAM) is a global atmospheric general circulation model developed from the NCAR CCM3.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#cice -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#cice">
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717667304191430"/>
+        <rdfs:comment>The sea-ice component (CICE) is an extension of the Los Alamos National Laboratory (LANL) sea-ice model and was developed though collaboration within the CCSM Polar Climate Working Group (PCWG). In CCSM, CICE can run as a fully prognostic component or in prescribed mode where ice coverage (normally climatological) is read in.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#cism -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#cism">
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717679128759954"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#clm -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#clm">
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717672272352954"/>
+        <rdfs:comment>The Community Land Model (CLM) is the result of a collaborative project between scientists in the Terrestrial Sciences Section of the Climate and Global Dynamics Division (CGD) at NCAR and the CCSM Land Model Working Group. Other principal working groups that also contribute to the CLM are Biogeochemistry, Paleoclimate, and Climate Change and Assessment.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#datm -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#datm">
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717656360858999"/>
+        <rdfs:comment>data</rdfs:comment>
+        <rdfs:comment>The data atmosphere component is a pure data component that reads in atmospheric forcing data</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#dice -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#dice">
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717667304191430"/>
+        <rdfs:comment>The data ice component is a partially prognostic model. The model reads in ice coverage and receives atmospheric forcing from the coupler, and then it calculates the ice/atmosphere and ice/ocean fluxes. The data ice component acts very similarly to CICE running in prescribed mode.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#dlnd -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#dlnd">
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717672272352954"/>
+        <rdfs:comment>The data land component differs from the other data models in that it can run as a purely data-runoff model (reading in runoff data) or as a purely data-land model (reading in coupler history data for atm/land fluxes and land albedos produced by a previous run) or both.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#docn -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#docn">
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717675633067030"/>
+        <rdfs:comment>The data ocean component has two distinct modes of operation. It can run as a pure data model, reading ocean SSTs (normally climatological) from input datasets, interpolating in space and time, and then passing these to the coupler. Alternatively, docn can compute updated SSTs based on a slab ocean model where bottom ocean heat flux convergence and boundary layer depths are read in and used with the atmosphere/ocean and ice/ocean fluxes obtained from the coupler.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#glc -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#glc">
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717679128759954"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#pop2 -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#pop2">
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717675633067030"/>
+        <rdfs:comment>The ocean model is an extension of the Parallel Ocean Program (POP) Version 2 from Los Alamos National Laboratory (LANL).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#satm -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#satm">
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717656360858999"/>
+        <rdfs:comment>stub</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#sglc -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#sglc">
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717679128759954"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#sice -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#sice">
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717667304191430"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#slnd -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#slnd">
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717672272352954"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#socn -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#socn">
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717675633067030"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#xatm -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#xatm">
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717656360858999"/>
+        <rdfs:comment>dead</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#xglc -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#xglc">
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717679128759954"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#xice -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#xice">
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717667304191430"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#xlnd -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#xlnd">
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717672272352954"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.c3.com/ontologies/c3InputSpecs#xocn -->
+
+    <owl:Class rdf:about="http://www.c3.com/ontologies/c3InputSpecs#xocn">
+        <rdfs:subClassOf rdf:resource="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717675633067030"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#docn"/>
+            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#pop2"/>
+            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#socn"/>
+            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#xocn"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#cice"/>
+            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#dice"/>
+            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#sice"/>
+            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#xice"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#cam"/>
+            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#datm"/>
+            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#satm"/>
+            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#xatm"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#clm"/>
+            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#dlnd"/>
+            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#slnd"/>
+            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#xlnd"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#cism"/>
+            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#glc"/>
+            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#sglc"/>
+            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#xglc"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717656360858999"/>
+            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717667304191430"/>
+            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717672272352954"/>
+            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717675633067030"/>
+            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717679128759954"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#CompSet"/>
+            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#Date"/>
+            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#Extra"/>
+            <rdf:Description rdf:about="http://www.c3.com/ontologies/c3InputSpecs#OWLClass_00000717603650095517"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.1.0.20069) http://owlapi.sourceforge.net -->
+
