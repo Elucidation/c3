@@ -1,0 +1,21 @@
+#!/bin/bash
+
+cd ~/ccsm4/scripts/
+
+echo "Creating new case..."
+./create_newcase -case <casename> -res <grid> -compset <compset> -mach <machine>
+cd ~/ccsm4/scripts/<casename>/
+
+
+echo "Configuring case..."
+./configure -case
+
+
+echo "Building case..."
+./<casename>.<machine>.clean_build
+./<casename>.<machine>.build
+
+echo "Running simulation..."
+./<casename>.<machine>.run
+
+echo "Run complete."
