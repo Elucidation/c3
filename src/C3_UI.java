@@ -53,6 +53,16 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
+import net.schmizz.sshj.SSHClient;
+import net.schmizz.sshj.common.IOUtils;
+import net.schmizz.sshj.connection.channel.direct.Session;
+import net.schmizz.sshj.connection.channel.direct.Session.Command;
+
+import java.util.concurrent.TimeUnit;
+import net.schmizz.sshj.userauth.keyprovider.FileKeyProvider;
+import net.schmizz.sshj.userauth.keyprovider.KeyProvider;
+import net.schmizz.sshj.userauth.keyprovider.PKCS8KeyFile;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -75,7 +85,7 @@ public class C3_UI extends javax.swing.JFrame {
      */
     private static Set<Instance> startNewAmazonInstance(AmazonEC2 ec2, String ami_id) {
         RunInstancesRequest request = new RunInstancesRequest(ami_id,1,1); // launch 1 instance
-        //request.setKeyName("key4");
+        request.setKeyName("demoKeypair");
         request.setInstanceType("m1.large");
         return getInstancesFromResult(ec2.runInstances(request));
     }
@@ -121,6 +131,34 @@ public class C3_UI extends javax.swing.JFrame {
       finally {
         stream.close();
       }
+    }
+
+    private void testSSH() throws IOException {
+        final SSHClient ssh = new SSHClient();
+
+        ssh.addHostKeyVerifier("cf:0c:bf:1c:07:5e:83:0b:e1:9a:4f:0f:86:46:37:cd");
+
+        ssh.loadKnownHosts();
+
+        //ssh.connect( InetAddress.getByName());
+        ssh.connect("ec2-50-17-153-118.compute-1.amazonaws.com");
+        try {
+            FileKeyProvider kp = new PKCS8KeyFile();
+            kp.init(new File("D:/CollegeHW/CS Research/Keys/demo.pem"));
+            ssh.authPublickey("root",kp);
+            final Session session = ssh.startSession();
+            try {
+                final Command cmd = session.exec("ping -c 1 google.com");
+                System.out.print(cmd.getOutputAsString());
+                cmd.join(5, TimeUnit.SECONDS);
+                System.out.println("\n** exit status: " + cmd.getExitStatus());
+            } finally {
+                session.close();
+            }
+
+        } finally {
+            ssh.disconnect();
+        }
     }
 
     private void updateTemplateOnScreen() {
@@ -172,6 +210,16 @@ public class C3_UI extends javax.swing.JFrame {
         System.out.println("Loading template");
         initTemplate();
         System.out.println("Finished loading template");
+
+        System.out.println("-------------------");
+
+        System.out.println("Testing SSH");
+        try {
+            testSSH();
+        } catch (IOException ex) {
+            Logger.getLogger(C3_UI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        System.out.println("Finished testing SSH");
 
         System.out.println("-------------------");
 
@@ -1466,7 +1514,46 @@ public class C3_UI extends javax.swing.JFrame {
             // 2 - END
 
             // SEE ALL INSTANCES INFORMORMATION
+            boolean wasPending = false;
             Iterator it = newInstances.iterator();
+            while (it.hasNext()) { // For every instance created
+                // Get element
+                Instance newinstance = (Instance)it.next();
+                System.out.println("------------------------------");
+                System.out.println("Instance ID: "+newinstance.getInstanceId().toString());
+                System.out.println("AMI ID used: "+newinstance.getImageId().toString());
+                System.out.println("State: "+newinstance.getState().toString());
+                int maxCheck = 2; // Only wait for instance to run 20 times (about 20*5 sec = 100 seconds)
+                if (newinstance.getState().getName().equalsIgnoreCase("pending")) {
+                    wasPending = true;              
+                } else if (newinstance.getState().getName().equalsIgnoreCase("running")) {
+                    System.out.println("Public IP Address: "+newinstance.getPublicIpAddress().toString());
+                    System.out.println("Public DNS Name: "+newinstance.getPublicDnsName().toString());
+                    System.out.println("Architecture: "+newinstance.getArchitecture());
+                }
+                System.out.println("------------------------------");
+            }
+
+            while (wasPending==true) {
+                Thread.sleep(10000); // 10 sec
+                newInstances = getCurrentInstances(ec2);
+                wasPending = false;
+                int maxCheck = 10; // Only wait for instance to run 20 times (about 20*5 sec = 100 seconds)
+                it = newInstances.iterator();
+                while (it.hasNext()) { // For every instance created
+                    // Get element
+                    Instance newinstance = (Instance)it.next();
+                    if (newinstance.getState().getName().equalsIgnoreCase("pending")) {
+                        wasPending = true;
+                        System.out.println("Waiting for Amazon instance to start running... Will check " + maxCheck + " more times...");
+                        System.out.println("Current State of Instance "+newinstance.getInstanceId().toString()+": "+newinstance.getState().toString());
+                        maxCheck--;
+                    }
+                }
+            }
+            
+            // SEE ALL INSTANCES INFORMORMATION
+            it = newInstances.iterator();
             while (it.hasNext()) { // For every instance created
                 // Get element
                 Instance newinstance = (Instance)it.next();
@@ -1476,6 +1563,7 @@ public class C3_UI extends javax.swing.JFrame {
                 System.out.println("State: "+newinstance.getState().toString());
                 int maxCheck = 20; // Only wait for instance to run 20 times (about 20*5 sec = 100 seconds)
                 if (newinstance.getState().getName().equalsIgnoreCase("pending")) {
+                    wasPending = true;
                     while (!newinstance.getState().getName().equalsIgnoreCase("running") && maxCheck > 0) {
                         System.out.println("Waiting for Amazon instance to start running... Will check " + maxCheck + " more times...");
                         System.out.println("Current State of Instance "+newinstance.getInstanceId().toString()+": "+newinstance.getState().toString());
@@ -1489,6 +1577,7 @@ public class C3_UI extends javax.swing.JFrame {
                 }
                 System.out.println("------------------------------");
             }
+
 
 
         } catch (AmazonServiceException ase) {
