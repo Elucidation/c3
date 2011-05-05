@@ -12,5 +12,6 @@ Georgia Institute of Technology
 
 --------------
 
-May 5th 2011, the AWS interaction requires an AwsCredentials.properties file containing access key & secret access key to be able to access a user's Amazon Web Services.
+May 5th 2011, the AWS interaction requires an AwsCredentials.properties file containing access key & secret access key to be able to access a user's Amazon Web Services. The keys can be found at http://aws.amazon.com/security-credentials
+The 'AwsCredentials.properties' file needs to be stored in the src/ directory
 Without this, the Cloud portion of the program cannot function!
