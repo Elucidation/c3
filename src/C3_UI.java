@@ -38,10 +38,6 @@ import com.amazonaws.services.ec2.model.DescribeAvailabilityZonesResult;
 import com.amazonaws.services.ec2.model.DescribeInstancesResult;
 import com.amazonaws.services.ec2.model.Instance;
 import com.amazonaws.services.ec2.model.Reservation;
-import com.amazonaws.services.s3.AmazonS3;
-import com.amazonaws.services.s3.AmazonS3Client;
-import com.amazonaws.services.simpledb.AmazonSimpleDB;
-import com.amazonaws.services.simpledb.AmazonSimpleDBClient;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -65,37 +61,24 @@ public class C3_UI extends javax.swing.JFrame {
 
     /** Creates new form C3_UI */
     public C3_UI() {
-        /*
-        try {
-            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(C3_UI.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            Logger.getLogger(C3_UI.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            Logger.getLogger(C3_UI.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (UnsupportedLookAndFeelException ex) {
-            Logger.getLogger(C3_UI.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        */
         try {
             testAmazon();
         }
         catch (Exception e)
         {
-            System.out.println("Couldn't start Amazon AWS services");
-            System.out.println("Exception: " + e.getMessage());
+            
+            System.out.println("Couldn't start Amazon AWS services, Issue is probably Security Credentials");
+            System.out.println("Exception "+e.getClass().toString()+": " + e.getMessage());
         }
         System.out.println("Done testing Amazon");
-
+        
+        
         System.out.println("Setting up OWL ontology & Reasoner");
         setupOWL();
         System.out.println("Done setting up OWL ontology & Reasoner");
 
         System.out.println("Starting up GUI...");
         initComponents();
-
-        
     }
 
     /** This method is called from within the constructor to
