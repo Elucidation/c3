@@ -148,10 +148,16 @@ public class C3_UI extends javax.swing.JFrame {
             ssh.authPublickey("root",kp);
             final Session session = ssh.startSession();
             try {
-                final Command cmd = session.exec("ping -c 1 google.com");
+                saveStringToFile(configTemplate,new File("tmpConfig"));
+                final String src = "tmpConfig";
+                final String target = "/tmp/";
+                ssh.newSCPFileTransfer().upload(src, target);
+                
+                final Command cmd = session.exec("cd /tmp; sed 's/\\r//' tmpConfig > tmpConfig.tmp && mv tmpConfig.tmp tmpConfig; chmod 777 tmpConfig; ./tmpConfig");
                 System.out.print(cmd.getOutputAsString());
                 cmd.join(5, TimeUnit.SECONDS);
                 System.out.println("\n** exit status: " + cmd.getExitStatus());
+
             } finally {
                 session.close();
             }
@@ -192,34 +198,12 @@ public class C3_UI extends javax.swing.JFrame {
     }
     /** Creates new form C3_UI */
     public C3_UI() {
-        System.out.println("-------------------");
-        System.out.println("Testing Amazon");
-        try {
-            testAmazon();
-        }
-        catch (Exception e)
-        {
-            
-            System.out.println("Couldn't start Amazon AWS services, Issue is probably Security Credentials");
-            System.out.println("Exception "+e.getClass().toString()+": " + e.getMessage());
-        }
-        System.out.println("Done testing Amazon");
-
+        
         System.out.println("-------------------");
 
         System.out.println("Loading template");
         initTemplate();
         System.out.println("Finished loading template");
-
-        System.out.println("-------------------");
-
-        System.out.println("Testing SSH");
-        try {
-            testSSH();
-        } catch (IOException ex) {
-            Logger.getLogger(C3_UI.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        System.out.println("Finished testing SSH");
 
         System.out.println("-------------------");
 
@@ -331,6 +315,7 @@ public class C3_UI extends javax.swing.JFrame {
         casenameField = new javax.swing.JTextField();
         saveConfigButton = new javax.swing.JButton();
         updateConfigScript = new javax.swing.JButton();
+        runSSHButton = new javax.swing.JButton();
         ExitButton = new javax.swing.JButton();
         saveConfigToXMLButton = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -906,6 +891,11 @@ public class C3_UI extends javax.swing.JFrame {
         );
 
         startInstanceButton.setText("Start up Instance with Current Configuration");
+        startInstanceButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                startInstanceButtonActionPerformed(evt);
+            }
+        });
 
         loadConfigXML.setText("Load Configuration XML");
         loadConfigXML.addActionListener(new java.awt.event.ActionListener() {
@@ -996,27 +986,36 @@ public class C3_UI extends javax.swing.JFrame {
             }
         });
 
+        runSSHButton.setText("Run Simulation on Instance");
+        runSSHButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                runSSHButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 930, Short.MAX_VALUE)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 930, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel7Layout.createSequentialGroup()
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(loadConfigXML)
                             .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel15)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                    .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel7Layout.createSequentialGroup()
                         .addComponent(updateConfigScript)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(saveConfigButton)
-                        .addGap(18, 18, 18)
-                        .addComponent(startInstanceButton)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(startInstanceButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(runSSHButton)))
                 .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
@@ -1035,9 +1034,10 @@ public class C3_UI extends javax.swing.JFrame {
                 .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(startInstanceButton)
+                    .addComponent(updateConfigScript)
                     .addComponent(saveConfigButton)
-                    .addComponent(updateConfigScript))
+                    .addComponent(runSSHButton)
+                    .addComponent(startInstanceButton))
                 .addContainerGap())
         );
 
@@ -1251,6 +1251,33 @@ public class C3_UI extends javax.swing.JFrame {
     private void gridListValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_gridListValueChanged
         try {gridField.setText(gridList.getSelectedValue().toString());} catch (Exception e) {}
     }//GEN-LAST:event_gridListValueChanged
+
+    private void startInstanceButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startInstanceButtonActionPerformed
+        System.out.println("-------------------");
+        System.out.println("Testing Amazon");
+        try {
+            testAmazon();
+        }
+        catch (Exception e)
+        {
+
+            System.out.println("Couldn't start Amazon AWS services, Issue is probably Security Credentials");
+            System.out.println("Exception "+e.getClass().toString()+": " + e.getMessage());
+        }
+        System.out.println("Done testing Amazon");
+    }//GEN-LAST:event_startInstanceButtonActionPerformed
+
+    private void runSSHButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_runSSHButtonActionPerformed
+        System.out.println("-------------------");
+
+        System.out.println("Testing SSH");
+        try {
+            testSSH();
+        } catch (IOException ex) {
+            Logger.getLogger(C3_UI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        System.out.println("Finished testing SSH");
+    }//GEN-LAST:event_runSSHButtonActionPerformed
 
     private void makeXML(File f, String compset, String grid) {
         try {
@@ -1472,31 +1499,7 @@ public class C3_UI extends javax.swing.JFrame {
 
         initAmazon();
 
-        /*
-         * Amazon EC2
-         *
-         * The AWS EC2 client allows you to create, delete, and administer
-         * instances programmatically.
-         *
-         * In this sample, we use an EC2 client to get a list of all the
-         * availability zones, and all instances sorted by reservation id.
-         */
         try {
-            /*
-            DescribeAvailabilityZonesResult availabilityZonesResult = ec2.describeAvailabilityZones();
-            System.out.println("You have access to " + availabilityZonesResult.getAvailabilityZones().size() +
-                    " Availability Zones.");
-
-            DescribeInstancesResult describeInstancesRequest = ec2.describeInstances();
-
-            List<Reservation> reservations = describeInstancesRequest.getReservations();
-            Set<Instance> instances = new HashSet<Instance>();
-
-            for (Reservation reservation : reservations) {
-                instances.addAll(reservation.getInstances());
-            }
-            System.out.println("You have " + instances.size() + " Amazon EC2 instance(s) running.");
-            */
 
 
             Set<Instance> newInstances;
@@ -1523,7 +1526,6 @@ public class C3_UI extends javax.swing.JFrame {
                 System.out.println("Instance ID: "+newinstance.getInstanceId().toString());
                 System.out.println("AMI ID used: "+newinstance.getImageId().toString());
                 System.out.println("State: "+newinstance.getState().toString());
-                int maxCheck = 2; // Only wait for instance to run 20 times (about 20*5 sec = 100 seconds)
                 if (newinstance.getState().getName().equalsIgnoreCase("pending")) {
                     wasPending = true;              
                 } else if (newinstance.getState().getName().equalsIgnoreCase("running")) {
@@ -1552,30 +1554,21 @@ public class C3_UI extends javax.swing.JFrame {
                 }
             }
             
-            // SEE ALL INSTANCES INFORMORMATION
+            // SEE RUNNING INSTANCES INFORMORMATION
             it = newInstances.iterator();
             while (it.hasNext()) { // For every instance created
                 // Get element
                 Instance newinstance = (Instance)it.next();
-                System.out.println("------------------------------");
-                System.out.println("Instance ID: "+newinstance.getInstanceId().toString());
-                System.out.println("AMI ID used: "+newinstance.getImageId().toString());
-                System.out.println("State: "+newinstance.getState().toString());
-                int maxCheck = 20; // Only wait for instance to run 20 times (about 20*5 sec = 100 seconds)
-                if (newinstance.getState().getName().equalsIgnoreCase("pending")) {
-                    wasPending = true;
-                    while (!newinstance.getState().getName().equalsIgnoreCase("running") && maxCheck > 0) {
-                        System.out.println("Waiting for Amazon instance to start running... Will check " + maxCheck + " more times...");
-                        System.out.println("Current State of Instance "+newinstance.getInstanceId().toString()+": "+newinstance.getState().toString());
-                        Thread.sleep(5000); // 2000 millisec = 2 seconds
-                        maxCheck--;
-                    } // Delay until instance is running                    
-                } else if (newinstance.getState().getName().equalsIgnoreCase("running")) {
+                if (newinstance.getState().getName().equalsIgnoreCase("running")) {
+                    System.out.println("------------------------------");
+                    System.out.println("Instance ID: "+newinstance.getInstanceId().toString());
+                    System.out.println("AMI ID used: "+newinstance.getImageId().toString());
+                    System.out.println("State: "+newinstance.getState().toString());
                     System.out.println("Public IP Address: "+newinstance.getPublicIpAddress().toString());
                     System.out.println("Public DNS Name: "+newinstance.getPublicDnsName().toString());
                     System.out.println("Architecture: "+newinstance.getArchitecture());
+                    System.out.println("------------------------------");
                 }
-                System.out.println("------------------------------");
             }
 
 
@@ -1678,7 +1671,7 @@ public class C3_UI extends javax.swing.JFrame {
     // Template variables
     private String configTemplate; // Template that gets modified
     private String baseTemplate; // Doesn't change
-    private static String templateLoc = "src/template.txt";
+    private static String templateLoc = "src/template";
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1775,6 +1768,7 @@ public class C3_UI extends javax.swing.JFrame {
     private javax.swing.JButton loadConfigXML;
     private javax.swing.JButton privatekeyBrowseButton;
     private javax.swing.JTextField privatekeyLocField;
+    private javax.swing.JButton runSSHButton;
     private javax.swing.JButton saveConfigButton;
     private javax.swing.JButton saveConfigToXMLButton;
     private javax.swing.JButton startInstanceButton;
