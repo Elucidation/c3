@@ -12,9 +12,9 @@ The technical paper is available online at [GeorgiaTech](http://smartech.gatech.
 Usage
 ---
 
-C3 has two major utilies:
+C3 has two major utilities:
 
-1. It utilizes an OWL ontology & HermiT reasoning engine to infer configuration options.
+1. It uses an OWL ontology & HermiT reasoning engine to infer configuration options.
 2. It automates creation of CESM simulations on virtual machines on the Cloud, using Amazon Elastic Cloud (EC2) in this case
 
 The visual interface is written using Java Swing as a basic proof of concept, this has been further developed into a web service called [CESM Case Maker](https://github.com/Elucidation/CESMCaseMaker).
